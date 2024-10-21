@@ -1,30 +1,30 @@
 version: '3'
 
 services:
-web:
-    image: ayrtoncasa/sitesecurepass:1.1
-    container_name: ContainerSite
-    env_file:
-        - .env
-    ports:
-        - "8080:8080"
-    depends_on:
-        - db
-    networks:
-        - app-network
+    web:
+        image: ayrtoncasa/sitesecurepass:1.1
+        container_name: ContainerSite
+        env_file:
+            - .env
+        ports:
+            - "8080:8080"
+        depends_on:
+            - db
+        networks:
+            - app-network
 
-db:
-    image: ayrtoncasa/bdsecurepass:1.1
-    container_name: ContainerBanco
-    environment:
-        MYSQL_ROOT_PASSWORD: urubu100
-        MYSQL_USER: adm
-        MYSQL_PASSWORD: urubu100
-    ports:
-        - "3306:3306"
-    networks:
-        - app-network
+    db:
+        image: ayrtoncasa/bdsecurepass:1.1
+        container_name: ContainerBanco
+        environment:
+            MYSQL_ROOT_PASSWORD: urubu100
+            MYSQL_USER: adm
+            MYSQL_PASSWORD: urubu100
+        ports:
+            - "3306:3306"
+        networks:
+            - app-network
 
 networks:
     app-network:
-    driver: bridge
+        driver: bridge
