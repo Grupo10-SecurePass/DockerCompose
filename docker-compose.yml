@@ -2,7 +2,7 @@ version: '3'
 
 services:
     web:
-        image: ayrtoncasa/sitesecurepass:1.1
+        image: ayrtoncasa/sitesecurepass:1.2
         container_name: ContainerSite
         env_file:
             - .env
