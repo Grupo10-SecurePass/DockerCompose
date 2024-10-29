@@ -2,7 +2,7 @@ version: '3'
 
 services:
     web:
-        image: ayrtoncasa/sitesecurepass:1.3
+        image: ayrtoncasa/sitesecurepass:1.4
         container_name: ContainerSite
         env_file:
             - .env
@@ -14,7 +14,7 @@ services:
             - app-network
 
     db:
-        image: ayrtoncasa/bdsecurepass:1.2
+        image: ayrtoncasa/bdsecurepass:1.3
         container_name: ContainerBanco
         environment:
             MYSQL_ROOT_PASSWORD: urubu100
