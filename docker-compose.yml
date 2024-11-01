@@ -19,11 +19,18 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: urubu100
         restart: always
+        volumes:
+        - db_data:/var/lib/mysql
+        - ./BancoDadosSP:/docker-entrypoint-initdb.d/
         ports:
             - "3306:3306"
         networks:
             - app-network
+        
 
 networks:
     app-network:
         driver: bridge
+
+volumes:
+    db_data:
