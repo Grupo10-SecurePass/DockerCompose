@@ -6,6 +6,7 @@ services:
         container_name: ContainerSite
         env_file:
             - .env
+        restart: always
         ports:
             - "80:80"
         depends_on:
